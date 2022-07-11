@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TKShared.Master.cs" Inherits="TourneyKeeper.Web.SharedMaster" MasterPageFile="/TKSite.master" %>
+
+<asp:Content ID="TitleContent" runat="server" ContentPlaceHolderID="TitleContentPlaceHolder">
+    TourneyKeeper
+</asp:Content>
+
+<asp:Content ID="NavContent" runat="server" ContentPlaceHolderID="NavigationContent">
+    <ul class="nav navbar-nav">
+        <li class="nav-item" id="gamesli">
+            <asp:HyperLink ID="gamesHyperLink" class="nav-link" runat="server">Games</asp:HyperLink></li>
+        <li class="nav-item" id="armylistsli">
+            <asp:HyperLink ID="armylistsHyperLink" class="nav-link" runat="server">Armylists</asp:HyperLink></li>
+        <li class="nav-item" id="settingsli">
+            <asp:HyperLink ID="settingsHyperLink" class="nav-link" Visible="true" runat="server">Settings</asp:HyperLink></li>
+        <li class="nav-item" id="mytournamentsli">
+            <asp:HyperLink ID="myTournamentsHyperLink" class="nav-link" Visible="true" runat="server">My Tournaments</asp:HyperLink></li>
+        <li class="nav-item" id="createtournamentli">
+            <asp:HyperLink ID="createTournamentHyperLink" class="nav-link" Visible="true" runat="server">Create Tournament</asp:HyperLink></li>
+        <li class="nav-item" id="adminli">
+            <asp:HyperLink ID="adminHyperLink" class="nav-link" Visible="true" runat="server">Admin</asp:HyperLink></li>
+    </ul>
+</asp:Content>
+
+<asp:Content ID="Content" runat="server" ContentPlaceHolderID="MainContent">
+    <asp:ContentPlaceHolder ID="BodyContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ContactPlaceHolder">
+    Contact: <a href="mailto:admin@tourneykeeper.net">admin@tourneykeeper.net</a>
+</asp:Content>

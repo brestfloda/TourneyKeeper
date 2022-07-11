@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Frontpage.master.cs" Inherits="TourneyKeeper.Web.Frontpage" MasterPageFile="~/TKSite.master" %>
+
+<asp:Content ID="TitleContent" runat="server" ContentPlaceHolderID="TitleContentPlaceHolder">
+    TourneyKeeper
+</asp:Content>
+
+<asp:Content ID="NavContent" runat="server" ContentPlaceHolderID="NavigationContent">
+    <ul class="nav navbar-nav">
+        <li class="nav-item" id="previoustournamentsli">
+            <asp:HyperLink ID="previousTournamentsHyperLink" NavigateUrl="/Shared/PreviousTournaments.aspx" class="nav-link" runat="server">Previous Tournaments</asp:HyperLink></li>
+        <li class="nav-item" id="newsandlinksli">
+            <asp:HyperLink ID="newsAndLinksHyperLink" NavigateUrl="/Shared/NewsAndLinks.aspx" class="nav-link" runat="server">News and Links</asp:HyperLink></li>
+        <li class="nav-item" id="rankingsli">
+            <asp:HyperLink ID="rankingsHyperLink" NavigateUrl="/Shared/TKShowRanking.aspx" class="nav-link" runat="server">Rankings</asp:HyperLink></li>
+        <li class="nav-item" id="twitterli">
+            <asp:HyperLink ID="twitterHyperLink" NavigateUrl="https://twitter.com/KeeperTourney" class="nav-link" runat="server"><img src="/Images/twitter_bird.png" alt="Visit us on Twitter for updates" /></asp:HyperLink></li>
+    </ul>
+</asp:Content>
+
+<asp:Content ID="FrontpageBodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    <script>
+        $(document).ready(function () {
+            $('.mdb-select').materialSelect();
+            $('div.select-wrapper.mdb-select.colorful-select.dropdown-primary.md-form').addClass('mb-0');
+            $('div.select-wrapper.mdb-select.colorful-select.dropdown-primary.md-form').addClass('mt-0');
+            $('input.select-dropdown').addClass('mb-0');
+        });
+    </script>
+
+    <asp:ContentPlaceHolder ID="BodyContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ContactPlaceHolder">
+    Contact: <a href="mailto:admin@tourneykeeper.net">admin@tourneykeeper.net</a>
+</asp:Content>

@@ -1,0 +1,20 @@
+.valign-important table, td {
+    vertical-align: middle !important;
+}
+
+.hideGridColumn {
+    display: none;
+}
+
+.noWrapLink {
+    white-space: nowrap;
+}
+
+.rightAlignHeaderText th {
+    text-align: right;
+}
+
+.padding-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+}

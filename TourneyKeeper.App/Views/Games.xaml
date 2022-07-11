@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TourneyKeeper"
+             xmlns:s="clr-namespace:System;assembly=mscorlib"
+             x:Class="TourneyKeeper.Games"
+             BackgroundColor="#b7b7b7">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Logout" Order="Primary" Text="Logout" Priority="0" Command="{Binding LogoutCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout>
+        <RelativeLayout>
+            <StackLayout VerticalOptions="Start"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}">
+                <Label x:Name="NoGamesLabel" FontSize="Large" IsVisible="{Binding GamesVisible}">You have no current games</Label>
+                <ListView x:Name="GamesListView" ItemsSource="{Binding Games}" SelectedItem="{Binding SelectedGame}" RowHeight="120">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <AbsoluteLayout>
+                                    <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 0.15, 1" VerticalOptions="Center" Orientation="Vertical" Spacing="0">
+                                        <Label Text="Round" HorizontalOptions="Center" FontSize="12" Margin="0, 5, 0, 0"/>
+                                        <Label Text="{Binding Round}" HorizontalOptions="Center" FontAttributes="Bold" FontSize="40" Margin="0, 0, 0, 5"/>
+                                    </StackLayout>
+                                    <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.45, 0, 0.65, 1" VerticalOptions="Center" Orientation="Vertical" Spacing="0">
+                                        <Label Text="My opponent:" FontAttributes="Bold" FontSize="20" Margin="0, 5, 0, 0"/>
+                                        <Label Text="{Binding Opponent}" FontSize="18" Margin="0, 0, 0, 5"/>
+                                        <Label Text="{Binding Table}" FontSize="18" Margin="0, 0, 0, 5"/>
+                                    </StackLayout>
+                                    <Label AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1, 0, 0.3, 1" Text="{Binding Score}" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                </AbsoluteLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="End"
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.90}"
+                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}">
+                <Button Text="Update" Command="{Binding UpdateCommand}">
+                    <Button.CommandParameter>
+                        <s:Boolean>True</s:Boolean>
+                    </Button.CommandParameter>
+                </Button>
+            </StackLayout>
+        </RelativeLayout>
+        <ContentView x:Name="actIndBackground"
+                     BackgroundColor="#222222" Opacity="0.5"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     IsVisible="{Binding IsBusy}">
+        </ContentView>
+        <ActivityIndicator x:Name="actInd"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
+                           IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}" />
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "306781259503",
+    "firebase_url": "https://api-8309278047052471945-161522.firebaseio.com",
+    "project_id": "api-8309278047052471945-161522",
+    "storage_bucket": "api-8309278047052471945-161522.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306781259503:android:cc2018423ffad524",
+        "android_client_info": {
+          "package_name": "tourneykeeper.tourneykeeper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306781259503-drgq03s2qggd8n4ir4hjj9hqnitm1lfs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tourneykeeper.tourneykeeper",
+            "certificate_hash": "e0074d3b09d84414f1e8741888e7696a44bdfd13"
+          }
+        },
+        {
+          "client_id": "306781259503-72q0jk81q55b970fr5eoqooqv5m6521g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNiutlA6u7WLs4GLUD_30p-pz7FTzU19s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306781259503-72q0jk81q55b970fr5eoqooqv5m6521g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

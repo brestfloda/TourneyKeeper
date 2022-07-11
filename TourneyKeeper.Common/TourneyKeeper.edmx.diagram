@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="10c8c503aba9460c9e1e0e584c078356" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKCodex" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKFrontPageLinks" Width="1.5" PointX="2.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKGame" Width="1.5" PointX="14.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKGameSystem" Width="1.5" PointX="0.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKOrganizer" Width="1.5" PointX="10.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKPlayer" Width="1.5" PointX="8" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKRanking" Width="1.5" PointX="8.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKRankingType" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKSinglesScoringSystem" Width="1.5" PointX="5.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKTeamMatch" Width="1.5" PointX="12.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKTeamScoringSystem" Width="1.5" PointX="5.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKTournamentTeam" Width="1.5" PointX="10.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKTournamentType" Width="1.5" PointX="5.75" PointY="21.25" IsExpanded="true" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_MOCodex_TKGameSystem" ManuallyRouted="false" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKGame_TKTeamMatch" ManuallyRouted="false" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKRankingType_TKGameSystem" ManuallyRouted="false" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKOrganizer_TKPlayer" ManuallyRouted="false" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_Ranking_TKPlayer" ManuallyRouted="false" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKRanking_TKRankingType" ManuallyRouted="false" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTeamMatch_TKTournamentTeam" ManuallyRouted="false" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTeamMatch_TKTournamentTeam1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKOption" Width="1.5" PointX="10.25" PointY="14.375" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKOptionTeam" Width="2.625" PointX="12.5" PointY="19.875" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKOptionTeam_TKOption" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKOptionTeam_TKTournamentTeam" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKOptionPlayer" Width="2.125" PointX="15.5" PointY="18.25" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKOptionPlayer_TKOption" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.Log" Width="1.5" PointX="0.75" PointY="0.625" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKTournament" Width="1.5" PointX="11" PointY="1.25" />
+        <EntityTypeShape EntityType="TourneyKeeper.Common.TKTournamentPlayer" Width="2.5" PointX="17.25" PointY="7.875" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournamentPlayer_MOCodex" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournamentPlayer_MOCodex1" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournamentPlayer_MOCodex2" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournamentPlayer_MOCodex3" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_Game_TKTournamentPlayer" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_Game_TKTournamentPlayer1" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKGame_TKTournament" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournament_GameSystem" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKOption_TKTournament" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKOptionPlayer_TKTournamentPlayer" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKOrganizer_TKTournament" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournamentPlayer_TKPlayer" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournament_TKSinglesScoringSystem" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTeamMatch_TKTournament" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournament_TKTeamScoringSystem" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournament_TKTournamentType" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournamentPlayer_TKTournament" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournamentTeam_TKTournament" />
+        <AssociationConnector Association="TourneyKeeper.Common.FK_TKTournamentPlayer_TKTournamentTeam" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

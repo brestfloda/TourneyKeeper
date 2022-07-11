@@ -1,0 +1,19 @@
+﻿<Window x:Class="DataImporterGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataImporterGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Label>Last run:</Label>
+            <Label Name="lastRun">Not run</Label>
+        </StackPanel>
+        <Button Name="importButton" Click="Button_Click" DockPanel.Dock="Top">Start</Button>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <TextBox Name="Output"></TextBox>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

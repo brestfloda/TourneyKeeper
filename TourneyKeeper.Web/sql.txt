@@ -1,0 +1,97 @@
+﻿delete from MOArmy
+delete from TKCodex
+delete from MOConsolidatedPairingData
+delete from MOMissionType
+delete from MOPairing
+delete from MOPairingData
+delete from MOPairingEvaluation
+delete from MOTeam
+delete from MOTournament
+delete from TKFrontPageLinks
+delete from TKGame
+delete from TKGameSystem
+delete from TKOrganizer
+delete from TKPlayer
+delete from TKRanking
+delete from TKRankingType
+delete from TKSinglesScoringSystem
+delete from TKTeamMatch
+delete from TKTeamScoringSystem
+delete from TKTournament
+delete from TKTournamentPlayer
+delete from TKTournamentTeam
+delete from TKTournamentType
+
+select g.round, t1.name, tp1.PlayerName, c1.name, g.Player1Result, t2.name, tp2.PlayerName, c1.name, g.Player2Result from tkgame g
+join TKTournamentPlayer tp1 on g.Player1Id = tp1.id
+join TKTournamentPlayer tp2 on g.Player2Id = tp2.id
+join TKCodex c1 on tp1.PrimaryCodexId = c1.id
+join TKCodex c2 on tp2.PrimaryCodexId = c2.id
+join TKTournamentTeam t1 on tp1.TournamentTeamId = t1.id
+join TKTournamentTeam t2 on tp2.TournamentTeamId = t2.id
+where g.TournamentId = 234
+
+select 'ALTER INDEX "' + I.name + '" ON ' + T.name + ' DISABLE' 
+from sys.indexes I
+inner join sys.tables T on I.object_id = T.object_id
+where I.type_desc = 'NONCLUSTERED'
+and I.name is not null
+
+select 'ALTER INDEX "' + I.name + '" ON ' + T.name + ' REBUILD' 
+from sys.indexes I
+inner join sys.tables T on I.object_id = T.object_id
+where I.type_desc = 'NONCLUSTERED'
+and I.name is not null
+
+DECLARE @sql NVARCHAR(MAX) = N'';
+
+;WITH x AS 
+(
+  SELECT DISTINCT obj = 
+      QUOTENAME(OBJECT_SCHEMA_NAME(parent_object_id)) + '.' 
+    + QUOTENAME(OBJECT_NAME(parent_object_id)) 
+  FROM sys.foreign_keys
+)
+SELECT @sql += N'ALTER TABLE ' + obj + ' WITH CHECK CHECK CONSTRAINT ALL;
+' FROM x;
+
+EXEC sp_executesql @sql;
+
+DECLARE @sql NVARCHAR(MAX) = N'';
+
+;WITH x AS 
+(
+  SELECT DISTINCT obj = 
+      QUOTENAME(OBJECT_SCHEMA_NAME(parent_object_id)) + '.' 
+    + QUOTENAME(OBJECT_NAME(parent_object_id)) 
+  FROM sys.foreign_keys
+)
+SELECT @sql += N'ALTER TABLE ' + obj + ' NOCHECK CONSTRAINT ALL;
+' FROM x;
+
+EXEC sp_executesql @sql;
+
+select tt.Name as Team, t.Name as Tournament, tt.PaymentToken as StripeToken, o.Name as [Option], ot.Price, ot.Amount, tp.TotalPrice
+from TKTournamentTeam tt
+join tktournament t on tt.TournamentId = t.Id
+join TKTournamentPlayer tp on tt.Id = tp.TournamentTeamId and tp.PaymentToken = tt.PaymentToken
+join TKOptionTeam ot on ot.TournamentPlayerId = tp.Id
+join TKOption o on ot.OptionId = o.Id
+where t.Name like '%ETC%' and t.Name like '%2018%' and tt.PaymentToken is not null
+
+select tp.playerName as player, tp.PaymentToken as StripeToken, o.Name as [Option], ot.Price, ot.Amount, tp.TotalPrice
+from TKTournamentPlayer tp
+join TKOptionPlayer ot on ot.TournamentPlayerId = tp.Id
+--join TKOptionTeam ot on ot.TournamentPlayerId = tp.Id
+join TKOption o on ot.OptionId = o.Id
+join TKtournament t on tp.TournamentId = t.id
+where (t.Name like '%ETC%' or t.name like '%ESC%') and t.Name like '%2018%' and tp.PaymentToken is not null
+order by tp.id asc
+
+select distinct tp.playerName as player, tp.PaymentToken as StripeToken, tp.TotalPrice
+from TKTournamentPlayer tp
+join TKOptionPlayer ot on ot.TournamentPlayerId = tp.Id
+--join TKOptionTeam ot on ot.TournamentPlayerId = tp.Id
+join TKOption o on ot.OptionId = o.Id
+join TKtournament t on tp.TournamentId = t.id
+where (t.Name like '%ETC%' or t.name like '%ESC%') and t.Name like '%2018%' and tp.PaymentToken is not null

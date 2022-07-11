@@ -1,0 +1,53 @@
+﻿<Window x:Class="Countdown.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Countdown"
+        xmlns:misc="clr-namespace:Countdown.Misc"
+        xmlns:gl="clr-namespace:System.Globalization;assembly=mscorlib"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <misc:DateTimeConverter x:Key="converter" />
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <!--<DataGrid Name="data" CanUserAddRows="True" CanUserDeleteRows="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tournamentname" Binding="{Binding Tournamentname}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="Round end">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding RoundEnd, StringFormat='f', ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <TextBox ToolTip="Format: dd-mm-yyyy hh:mm">
+                                    <TextBox.Text>
+                                        <Binding Path="RoundEnd" StringFormat="d-M-yyyy HH:mm" Converter="{StaticResource converter}">
+                                            <Binding.ValidationRules>
+                                                <misc:DateTimeValidationRule></misc:DateTimeValidationRule>
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </TextBox.Text>
+                                </TextBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>-->
+            <StackPanel Orientation="Horizontal">
+                <Label>Round end:</Label>
+                <TextBox ToolTip="Format: dd-mm-yyyy hh:mm" Name="roundEndTextbox" Width="150">
+                    <TextBox.Text>
+                        <Binding Path="RoundEnd" StringFormat="d-M-yyyy HH:mm" Converter="{StaticResource converter}">
+                            <Binding.ValidationRules>
+                                <misc:DateTimeValidationRule></misc:DateTimeValidationRule>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+            </StackPanel>
+            <Button Click="Button_Click">Maximize</Button>
+        </StackPanel>
+    </Grid>
+</Window>

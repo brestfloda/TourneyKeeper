@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{b7052fc1-bfc0-4c9f-b6c7-8073eb0c3ff8}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>31101ab0-c7fe-476f-b719-4985f424ea4c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TourneyKeeper.DTO</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App\EntityUpdateDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App\GameDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App\GamesDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App\GamesResponseDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App\LoginDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App\RegisterClientDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App\ResponseDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App\UpdateGameDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App\UpdateGameResponseDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App\VerifyLoginDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\CodexLeaderboardData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\TeamPairingsData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\TeamLeaderboardData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\PairingsData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\OrganizerData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\TeamData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\EditTeamData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\EditPlayerData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\PlayerData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\LeaderboardData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Web\ITCExportData.cs" />
+  </ItemGroup>
+</Project>

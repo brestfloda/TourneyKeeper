@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.4.0.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.4.0.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2D91C0DA-8A8C-4FD8-A0FD-FCF7FAC76DE2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TourneyKeeper.Web</RootNamespace>
+    <AssemblyName>TourneyKeeper.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44341</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert, Version=6.0.1.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.1.3\lib\net45\EntityFramework.BulkInsert.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.15.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.15.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Thread" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Army.ascx" />
+    <Content Include="Controls\CodexLeaderboard.ascx" />
+    <Content Include="Controls\GamesOverview.ascx" />
+    <Content Include="Controls\Login.ascx" />
+    <Content Include="Controls\PlayingNow.ascx" />
+    <Content Include="Controls\SearchOrganizer.ascx" />
+    <Content Include="Controls\SearchPlayer.ascx" />
+    <Content Include="Controls\UpcomingTournaments.ascx" />
+    <Content Include="Controls\YouArePlaying.ascx" />
+    <Content Include="css\style.css" />
+    <Content Include="Images\app-ikon-512x512.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\mdb.lite.min.css" />
+    <Content Include="css\mdb.min.css" />
+    <Content Include="css\style.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\HowToSignup.png" />
+    <Content Include="Images\HowToUseTeam.png" />
+    <Content Include="Images\Erase.png" />
+    <Content Include="Images\list.png" />
+    <Content Include="Images\Logo1024x500.png" />
+    <Content Include="Images\single.png" />
+    <Content Include="Images\team.png" />
+    <Content Include="Images\twitter_bird.png" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.4.1.min.js" />
+    <Content Include="js\mdb.lite.min.js" />
+    <Content Include="js\mdb.min.js" />
+    <Content Include="js\popper.min.js" />
+    <Content Include="js\tkcommon.js" />
+    <Content Include="Shared\HowToSignup.aspx" />
+    <Content Include="Shared\HowToUseTeam.aspx" />
+    <Content Include="Shared\MassRoll.aspx" />
+    <Content Include="Shared\PreviousTournaments.aspx" />
+    <Content Include="Shared\NewsAndLinks.aspx" />
+    <Content Include="Shared\TKArmylists.aspx" />
+    <Content Include="Shared\TKAdmin.aspx" />
+    <Content Include="Singles\TKAbout.aspx" />
+    <Content Include="Singles\TKCodexMatrix.aspx" />
+    <Content Include="Singles\TKImport.aspx" />
+    <Content Include="Singles\TKSinglesArmyListsExport.aspx" />
+    <Content Include="Singles\TKGamesOverview.aspx" />
+    <Content Include="Singles\TKSinglesPairingExport.aspx" />
+    <Content Include="Singles\TKSinglesOrganizers.aspx" />
+    <Content Include="Shared\TKSettings.aspx" />
+    <Content Include="Shared\TKMyTournaments.aspx" />
+    <Content Include="Shared\TKCreateTournament.aspx" />
+    <Content Include="Singles\TKITCExport.aspx" />
+    <Content Include="Singles\TKPlayers.aspx" />
+    <Content Include="Images\stripe.png" />
+    <Content Include="Team\TKArmyListsExport.aspx" />
+    <Content Include="Team\TKTeamGamesOverview.aspx" />
+    <Content Include="Team\TKTeamAbout.aspx" />
+    <Content Include="Team\TKTeamCodexMatrix.aspx" />
+    <Content Include="Team\TKTeamOrganizers.aspx" />
+    <Content Include="Team\TKPairingExport.aspx" />
+    <Content Include="Team\TKTeam.aspx" />
+    <Content Include="Team\TKTeams.aspx" />
+    <Content Include="Team\TKTeamPlayers.aspx" />
+    <Content Include="Images\TK.ico" />
+    <Content Include="Tools\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="packages.config" />
+    <Content Include="Tools\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Tools\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Tools\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Shared\TKShared.Master" />
+    <Content Include="pdf\EnteringScores.pdf" />
+    <Content Include="Frontpage.Master" />
+    <Content Include="font\roboto\Roboto-Bold.eot" />
+    <Content Include="font\roboto\Roboto-Bold.ttf" />
+    <Content Include="font\roboto\Roboto-Bold.woff" />
+    <Content Include="font\roboto\Roboto-Bold.woff2" />
+    <Content Include="font\roboto\Roboto-Light.eot" />
+    <Content Include="font\roboto\Roboto-Light.ttf" />
+    <Content Include="font\roboto\Roboto-Light.woff" />
+    <Content Include="font\roboto\Roboto-Light.woff2" />
+    <Content Include="font\roboto\Roboto-Medium.eot" />
+    <Content Include="font\roboto\Roboto-Medium.ttf" />
+    <Content Include="font\roboto\Roboto-Medium.woff" />
+    <Content Include="font\roboto\Roboto-Medium.woff2" />
+    <Content Include="font\roboto\Roboto-Regular.eot" />
+    <Content Include="font\roboto\Roboto-Regular.ttf" />
+    <Content Include="font\roboto\Roboto-Regular.woff" />
+    <Content Include="font\roboto\Roboto-Regular.woff2" />
+    <Content Include="font\roboto\Roboto-Thin.eot" />
+    <Content Include="font\roboto\Roboto-Thin.ttf" />
+    <Content Include="font\roboto\Roboto-Thin.woff" />
+    <Content Include="font\roboto\Roboto-Thin.woff2" />
+    <Content Include="libman.json" />
+    <None Include="Properties\PublishProfiles\d0bdaeb7-0ee0-4-231-b9ee.pubxml" />
+    <Content Include="Tools\minus.png" />
+    <Content Include="Tools\nicEdit\nicEdit.js" />
+    <Content Include="Images\nicEditorIcons.gif" />
+    <Content Include="Tools\plus.png" />
+    <Content Include="Tools\Content\datepicker.css" />
+    <Content Include="Tools\Scripts\clipboard.min.js" />
+    <Content Include="Tools\Scripts\Img\arrow.png" />
+    <Content Include="Tools\Scripts\Img\darkdenim3.png" />
+    <Content Include="Tools\Scripts\Img\dark_leather.png" />
+    <Content Include="Tools\Scripts\jquery.collapse.js" />
+    <Content Include="Tools\Scripts\jquery.downCount.js" />
+    <Content Include="Shared\PsyCalc.aspx" />
+    <Content Include="Shared\TKLogout.aspx" />
+    <Content Include="Shared\CreateUser.aspx" />
+    <Content Include="Shared\TKSignup.aspx" />
+    <Content Include="Shared\TKSignupTicker.aspx" />
+    <Content Include="Shared\TKEditGame.aspx" />
+    <Content Include="Shared\TKShowGame.aspx" />
+    <Content Include="Shared\TKGames.aspx" />
+    <Content Include="Singles\TKCreatePairings.aspx" />
+    <Content Include="Team\TKTeamCreatePairings.aspx" />
+    <Content Include="Team\TKTeamCodexLeaderboard.aspx" />
+    <Content Include="Team\TKIndividualLeaderboard.aspx" />
+    <Content Include="Team\TKIndividualPairings.aspx" />
+    <Content Include="Team\TKTeamSetupPairings.aspx" />
+    <Content Include="Team\TKTeamPairings.aspx" />
+    <Content Include="Shared\TKShowRanking.aspx" />
+    <Content Include="Singles\TKCodexLeaderboard.aspx" />
+    <Content Include="Team\TKTeamScoreWeightedLeaderboard.aspx" />
+    <Content Include="Team\TKTeamWeightedLeaderboard.aspx" />
+    <Content Include="Singles\TKWeightedLeaderboard.aspx" />
+    <Content Include="Shared\ShowArmy.aspx" />
+    <Content Include="Team\TKTeamLeaderboard.aspx" />
+    <Content Include="Singles\TKLeaderboard.aspx" />
+    <Content Include="Singles\TKPairings.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\tourneykeeperlogo.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="Controls\Army.ascx.cs">
+      <DependentUpon>Army.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Army.ascx.designer.cs">
+      <DependentUpon>Army.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CodexLeaderboard.ascx.cs">
+      <DependentUpon>CodexLeaderboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\CodexLeaderboard.ascx.designer.cs">
+      <DependentUpon>CodexLeaderboard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GamesOverview.ascx.cs">
+      <DependentUpon>GamesOverview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\GamesOverview.ascx.designer.cs">
+      <DependentUpon>GamesOverview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Login.ascx.cs">
+      <DependentUpon>Login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Login.ascx.designer.cs">
+      <DependentUpon>Login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlayingNow.ascx.cs">
+      <DependentUpon>PlayingNow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PlayingNow.ascx.designer.cs">
+      <DependentUpon>PlayingNow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchOrganizer.ascx.cs">
+      <DependentUpon>SearchOrganizer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchOrganizer.ascx.designer.cs">
+      <DependentUpon>SearchOrganizer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchPlayer.ascx.cs">
+      <DependentUpon>SearchPlayer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchPlayer.ascx.designer.cs">
+      <DependentUpon>SearchPlayer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UpcomingTournaments.ascx.cs">
+      <DependentUpon>UpcomingTournaments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UpcomingTournaments.ascx.designer.cs">
+      <DependentUpon>UpcomingTournaments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\YouArePlaying.ascx.cs">
+      <DependentUpon>YouArePlaying.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\YouArePlaying.ascx.designer.cs">
+      <DependentUpon>YouArePlaying.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage.Master.cs">
+      <DependentUpon>Frontpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage.Master.designer.cs">
+      <DependentUpon>Frontpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\HowToSignup.aspx.cs">
+      <DependentUpon>HowToSignup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\HowToSignup.aspx.designer.cs">
+      <DependentUpon>HowToSignup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\HowToUseTeam.aspx.cs">
+      <DependentUpon>HowToUseTeam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\HowToUseTeam.aspx.designer.cs">
+      <DependentUpon>HowToUseTeam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Login.ashx.cs">
+      <DependentUpon>Login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\MassRoll.aspx.cs">
+      <DependentUpon>MassRoll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\MassRoll.aspx.designer.cs">
+      <DependentUpon>MassRoll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PreviousTournaments.aspx.cs">
+      <DependentUpon>PreviousTournaments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PreviousTournaments.aspx.designer.cs">
+      <DependentUpon>PreviousTournaments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\NewsAndLinks.aspx.cs">
+      <DependentUpon>NewsAndLinks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\NewsAndLinks.aspx.designer.cs">
+      <DependentUpon>NewsAndLinks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PsyCalc.aspx.cs">
+      <DependentUpon>PsyCalc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PsyCalc.aspx.designer.cs">
+      <DependentUpon>PsyCalc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKAdmin.aspx.cs">
+      <DependentUpon>TKAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKAdmin.aspx.designer.cs">
+      <DependentUpon>TKAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKWebPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKAbout.aspx.cs">
+      <DependentUpon>TKAbout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKAbout.aspx.designer.cs">
+      <DependentUpon>TKAbout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKCodexMatrix.aspx.cs">
+      <DependentUpon>TKCodexMatrix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKCodexMatrix.aspx.designer.cs">
+      <DependentUpon>TKCodexMatrix.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKImport.aspx.cs">
+      <DependentUpon>TKImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKImport.aspx.designer.cs">
+      <DependentUpon>TKImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKSinglesArmyListsExport.aspx.cs">
+      <DependentUpon>TKSinglesArmyListsExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKSinglesArmyListsExport.aspx.designer.cs">
+      <DependentUpon>TKSinglesArmyListsExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKGamesOverview.aspx.cs">
+      <DependentUpon>TKGamesOverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKGamesOverview.aspx.designer.cs">
+      <DependentUpon>TKGamesOverview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKSinglesPairingExport.aspx.cs">
+      <DependentUpon>TKSinglesPairingExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKSinglesPairingExport.aspx.designer.cs">
+      <DependentUpon>TKSinglesPairingExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKSinglesOrganizers.aspx.cs">
+      <DependentUpon>TKSinglesOrganizers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKSinglesOrganizers.aspx.designer.cs">
+      <DependentUpon>TKSinglesOrganizers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKSettings.aspx.cs">
+      <DependentUpon>TKSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKSettings.aspx.designer.cs">
+      <DependentUpon>TKSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKEditGame.aspx.cs">
+      <DependentUpon>TKEditGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKEditGame.aspx.designer.cs">
+      <DependentUpon>TKEditGame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKLogout.aspx.cs">
+      <DependentUpon>TKLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKLogout.aspx.designer.cs">
+      <DependentUpon>TKLogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKArmylists.aspx.cs">
+      <DependentUpon>TKArmylists.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKArmylists.aspx.designer.cs">
+      <DependentUpon>TKArmylists.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKMyTournaments.aspx.cs">
+      <DependentUpon>TKMyTournaments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKMyTournaments.aspx.designer.cs">
+      <DependentUpon>TKMyTournaments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKCreateTournament.aspx.cs">
+      <DependentUpon>TKCreateTournament.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKCreateTournament.aspx.designer.cs">
+      <DependentUpon>TKCreateTournament.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKSignup.aspx.cs">
+      <DependentUpon>TKSignup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKSignup.aspx.designer.cs">
+      <DependentUpon>TKSignup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKShowGame.aspx.cs">
+      <DependentUpon>TKShowGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKShowGame.aspx.designer.cs">
+      <DependentUpon>TKShowGame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKSignupTicker.aspx.cs">
+      <DependentUpon>TKSignupTicker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKSignupTicker.aspx.designer.cs">
+      <DependentUpon>TKSignupTicker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKGames.aspx.cs">
+      <DependentUpon>TKGames.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKGames.aspx.designer.cs">
+      <DependentUpon>TKGames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKShared.Master.cs">
+      <DependentUpon>TKShared.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKShared.Master.designer.cs">
+      <DependentUpon>TKShared.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKCreatePairings.aspx.cs">
+      <DependentUpon>TKCreatePairings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKCreatePairings.aspx.designer.cs">
+      <DependentUpon>TKCreatePairings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKITCExport.aspx.cs">
+      <DependentUpon>TKITCExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKITCExport.aspx.designer.cs">
+      <DependentUpon>TKITCExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKPlayers.aspx.cs">
+      <DependentUpon>TKPlayers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKPlayers.aspx.designer.cs">
+      <DependentUpon>TKPlayers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKSingles.Master.cs">
+      <DependentUpon>TKSingles.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKSingles.Master.designer.cs">
+      <DependentUpon>TKSingles.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKArmyListsExport.aspx.cs">
+      <DependentUpon>TKArmyListsExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKArmyListsExport.aspx.designer.cs">
+      <DependentUpon>TKArmyListsExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamGamesOverview.aspx.cs">
+      <DependentUpon>TKTeamGamesOverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamGamesOverview.aspx.designer.cs">
+      <DependentUpon>TKTeamGamesOverview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamAbout.aspx.cs">
+      <DependentUpon>TKTeamAbout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamAbout.aspx.designer.cs">
+      <DependentUpon>TKTeamAbout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamCodexMatrix.aspx.cs">
+      <DependentUpon>TKTeamCodexMatrix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamCodexMatrix.aspx.designer.cs">
+      <DependentUpon>TKTeamCodexMatrix.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamOrganizers.aspx.cs">
+      <DependentUpon>TKTeamOrganizers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamOrganizers.aspx.designer.cs">
+      <DependentUpon>TKTeamOrganizers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKPairingExport.aspx.cs">
+      <DependentUpon>TKPairingExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKPairingExport.aspx.designer.cs">
+      <DependentUpon>TKPairingExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeam.aspx.cs">
+      <DependentUpon>TKTeam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeam.aspx.designer.cs">
+      <DependentUpon>TKTeam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeams.aspx.cs">
+      <DependentUpon>TKTeams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeams.aspx.designer.cs">
+      <DependentUpon>TKTeams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamPlayers.aspx.cs">
+      <DependentUpon>TKTeamPlayers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamPlayers.aspx.designer.cs">
+      <DependentUpon>TKTeamPlayers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeam.Master.cs">
+      <DependentUpon>TKTeam.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeam.Master.designer.cs">
+      <DependentUpon>TKTeam.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamCreatePairings.aspx.cs">
+      <DependentUpon>TKTeamCreatePairings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamCreatePairings.aspx.designer.cs">
+      <DependentUpon>TKTeamCreatePairings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamCodexLeaderboard.aspx.cs">
+      <DependentUpon>TKTeamCodexLeaderboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamCodexLeaderboard.aspx.designer.cs">
+      <DependentUpon>TKTeamCodexLeaderboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKIndividualLeaderboard.aspx.cs">
+      <DependentUpon>TKIndividualLeaderboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKIndividualLeaderboard.aspx.designer.cs">
+      <DependentUpon>TKIndividualLeaderboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKIndividualPairings.aspx.cs">
+      <DependentUpon>TKIndividualPairings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKIndividualPairings.aspx.designer.cs">
+      <DependentUpon>TKIndividualPairings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamSetupPairings.aspx.cs">
+      <DependentUpon>TKTeamSetupPairings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamSetupPairings.aspx.designer.cs">
+      <DependentUpon>TKTeamSetupPairings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamPairings.aspx.cs">
+      <DependentUpon>TKTeamPairings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamPairings.aspx.designer.cs">
+      <DependentUpon>TKTeamPairings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TKShowRanking.aspx.cs">
+      <DependentUpon>TKShowRanking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TKShowRanking.aspx.designer.cs">
+      <DependentUpon>TKShowRanking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKCodexLeaderboard.aspx.cs">
+      <DependentUpon>TKCodexLeaderboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKCodexLeaderboard.aspx.designer.cs">
+      <DependentUpon>TKCodexLeaderboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamScoreWeightedLeaderboard.aspx.cs">
+      <DependentUpon>TKTeamScoreWeightedLeaderboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamScoreWeightedLeaderboard.aspx.designer.cs">
+      <DependentUpon>TKTeamScoreWeightedLeaderboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamWeightedLeaderboard.aspx.cs">
+      <DependentUpon>TKTeamWeightedLeaderboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamWeightedLeaderboard.aspx.designer.cs">
+      <DependentUpon>TKTeamWeightedLeaderboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKWeightedLeaderboard.aspx.cs">
+      <DependentUpon>TKWeightedLeaderboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKWeightedLeaderboard.aspx.designer.cs">
+      <DependentUpon>TKWeightedLeaderboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\ShowArmy.aspx.cs">
+      <DependentUpon>ShowArmy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\ShowArmy.aspx.designer.cs">
+      <DependentUpon>ShowArmy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Team\TKTeamLeaderboard.aspx.cs">
+      <DependentUpon>TKTeamLeaderboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team\TKTeamLeaderboard.aspx.designer.cs">
+      <DependentUpon>TKTeamLeaderboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKLeaderboard.aspx.cs">
+      <DependentUpon>TKLeaderboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKLeaderboard.aspx.designer.cs">
+      <DependentUpon>TKLeaderboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Singles\TKPairings.aspx.cs">
+      <DependentUpon>TKPairings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Singles\TKPairings.aspx.designer.cs">
+      <DependentUpon>TKPairings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TKSite.Master.cs">
+      <DependentUpon>TKSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TKSite.Master.designer.cs">
+      <DependentUpon>TKSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAPI\DTO\GameDto.cs" />
+    <Compile Include="WebAPI\DTO\TournamentDto.cs" />
+    <Compile Include="WebAPI\DTO\GetTournamentsResponseDto.cs" />
+    <Compile Include="WebAPI\DTO\GetGamesResponseDto.cs" />
+    <Compile Include="WebAPI\DTO\IntDTO.cs" />
+    <Compile Include="WebAPI\CodexController.cs" />
+    <Compile Include="WebAPI\SystemController.cs" />
+    <Compile Include="WebAPI\TournamentController.cs" />
+    <Compile Include="WebAPI\PlayerController.cs" />
+    <Compile Include="WebAPI\TournamentTeamController.cs" />
+    <Compile Include="WebAPI\GameController.cs" />
+    <Compile Include="WebAPI\NotificationController.cs" />
+    <Compile Include="WebAPI\LoginController.cs" />
+    <Compile Include="WebAPI\BaseController.cs" />
+    <Compile Include="WebAPI\TeamMatchController.cs" />
+    <Compile Include="WebAPI\JsonContent.cs" />
+    <Compile Include="WebAPI\TournamentPlayerController.cs" />
+    <Compile Include="WebAPI\JsonMessage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TKSite.Master" />
+    <None Include="Properties\PublishProfiles\VoresmailTourneyKeeper.pubxml" />
+    <Content Include="Singles\TKSingles.Master" />
+    <Content Include="Team\TKTeam.Master" />
+    <Content Include="pdf\SettingUpPairings.pdf" />
+    <Content Include="pdf\TourneyKeeper.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shared\Login.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TourneyKeeper.Common\TourneyKeeper.Common.csproj">
+      <Project>{e80107f1-03a5-4e04-bed1-fc4e42de054c}</Project>
+      <Name>TourneyKeeper.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourneyKeeper.DTO\TourneyKeeper.DTO.csproj">
+      <Project>{cd0d4f1f-96f7-4f9e-a85b-b58dbb58612d}</Project>
+      <Name>TourneyKeeper.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="fonts\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20933</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44341/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.4.0.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.4.0.1\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

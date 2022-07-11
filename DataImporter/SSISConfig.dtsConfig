@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<DTSConfiguration>
+  <DTSConfigurationHeading>
+    <DTSConfigurationFileInfo GeneratedBy="BRESTFLODA\Michael" GeneratedFromPackageName="CopyData" GeneratedFromPackageID="{AC960C4D-58D2-4759-A18F-54303A6B3F0E}" GeneratedDate="05-06-2016 12:23:56"/>
+  </DTSConfigurationHeading>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>SqlServerName=brestfloda;UseWindowsAuthentication=True;UserName=;</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda].Properties[Name]" ValueType="String">
+    <ConfiguredValue>brestfloda</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda].Properties[Password]" ValueType="String">
+    <ConfiguredValue></ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda].Properties[ProtectionLevel]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda].Properties[Scope]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda].Properties[SqlServerName]" ValueType="String">
+    <ConfiguredValue>brestfloda</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda].Properties[UserName]" ValueType="String">
+    <ConfiguredValue></ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda].Properties[UseWindowsAuthentication]" ValueType="Boolean">
+    <ConfiguredValue>-1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda.voresmail_dk_db1].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>Data Source=brestfloda;Initial Catalog=voresmail_dk_db;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda.voresmail_dk_db1].Properties[InitialCatalog]" ValueType="String">
+    <ConfiguredValue>voresmail_dk_db</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda.voresmail_dk_db1].Properties[Name]" ValueType="String">
+    <ConfiguredValue>brestfloda.voresmail_dk_db1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda.voresmail_dk_db1].Properties[Password]" ValueType="String">
+    <ConfiguredValue></ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda.voresmail_dk_db1].Properties[ProtectionLevel]" ValueType="Int32">
+    <ConfiguredValue>1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda.voresmail_dk_db1].Properties[RetainSameConnection]" ValueType="Boolean">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda.voresmail_dk_db1].Properties[Scope]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda.voresmail_dk_db1].Properties[ServerName]" ValueType="String">
+    <ConfiguredValue>brestfloda</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[brestfloda.voresmail_dk_db1].Properties[UserName]" ValueType="String">
+    <ConfiguredValue></ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[CreateDB.sql].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>D:\data\Projects\TourneyKeeper\DataImporter\CreateDB.sql</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[CreateDB.sql].Properties[FileUsageType]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[CreateDB.sql].Properties[Name]" ValueType="String">
+    <ConfiguredValue>CreateDB.sql</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[CreateDB.sql].Properties[ProtectionLevel]" ValueType="Int32">
+    <ConfiguredValue>1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[CreateDB.sql].Properties[Scope]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[DeleteData.sql].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>D:\data\Projects\TourneyKeeper\DataImporter\DeleteData.sql</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[DeleteData.sql].Properties[FileUsageType]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[DeleteData.sql].Properties[Name]" ValueType="String">
+    <ConfiguredValue>DeleteData.sql</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[DeleteData.sql].Properties[ProtectionLevel]" ValueType="Int32">
+    <ConfiguredValue>1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[DeleteData.sql].Properties[Scope]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[DisableIndexes.sql].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>D:\data\Projects\TourneyKeeper\DataImporter\DisableIndexes.sql</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[DisableIndexes.sql].Properties[FileUsageType]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[DisableIndexes.sql].Properties[Name]" ValueType="String">
+    <ConfiguredValue>DisableIndexes.sql</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[DisableIndexes.sql].Properties[ProtectionLevel]" ValueType="Int32">
+    <ConfiguredValue>1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[DisableIndexes.sql].Properties[Scope]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[EnableIndexes.sql].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>D:\data\Projects\TourneyKeeper\DataImporter\EnableIndexes.sql</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[EnableIndexes.sql].Properties[FileUsageType]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[EnableIndexes.sql].Properties[Name]" ValueType="String">
+    <ConfiguredValue>EnableIndexes.sql</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[EnableIndexes.sql].Properties[ProtectionLevel]" ValueType="Int32">
+    <ConfiguredValue>1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[EnableIndexes.sql].Properties[Scope]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>SqlServerName=mssql2.unoeuro.com;UseWindowsAuthentication=False;UserName=voresmail_dk;</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk].Properties[Name]" ValueType="String">
+    <ConfiguredValue>mssql2.unoeuro.com.voresmail_dk</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk].Properties[Password]" ValueType="String">
+    <ConfiguredValue></ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk].Properties[ProtectionLevel]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk].Properties[Scope]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk].Properties[SqlServerName]" ValueType="String">
+    <ConfiguredValue>mssql2.unoeuro.com</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk].Properties[UserName]" ValueType="String">
+    <ConfiguredValue>voresmail_dk</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk].Properties[UseWindowsAuthentication]" ValueType="Boolean">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>Data Source=mssql2.unoeuro.com;User ID=voresmail_dk;Initial Catalog=voresmail_dk_db;Provider=SQLNCLI11.1;</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk].Properties[InitialCatalog]" ValueType="String">
+    <ConfiguredValue>voresmail_dk_db</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk].Properties[Name]" ValueType="String">
+    <ConfiguredValue>mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk].Properties[Password]" ValueType="String">
+    <ConfiguredValue></ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk].Properties[ProtectionLevel]" ValueType="Int32">
+    <ConfiguredValue>1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk].Properties[RetainSameConnection]" ValueType="Boolean">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk].Properties[Scope]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk].Properties[ServerName]" ValueType="String">
+    <ConfiguredValue>mssql2.unoeuro.com</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk].Properties[UserName]" ValueType="String">
+    <ConfiguredValue>voresmail_dk</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk1].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>Data Source=mssql2.unoeuro.com;User ID=voresmail_dk;Initial Catalog=voresmail_dk_db;Provider=SQLNCLI11.1;Auto Translate=False;</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk1].Properties[InitialCatalog]" ValueType="String">
+    <ConfiguredValue>voresmail_dk_db</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk1].Properties[Name]" ValueType="String">
+    <ConfiguredValue>mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk1].Properties[Password]" ValueType="String">
+    <ConfiguredValue></ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk1].Properties[ProtectionLevel]" ValueType="Int32">
+    <ConfiguredValue>1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk1].Properties[RetainSameConnection]" ValueType="Boolean">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk1].Properties[Scope]" ValueType="Int32">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk1].Properties[ServerName]" ValueType="String">
+    <ConfiguredValue>mssql2.unoeuro.com</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[mssql2.unoeuro.com.voresmail_dk_db.voresmail_dk1].Properties[UserName]" ValueType="String">
+    <ConfiguredValue>voresmail_dk</ConfiguredValue>
+  </Configuration>
+</DTSConfiguration>

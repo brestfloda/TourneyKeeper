@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TourneyKeeper"
+             x:Class="TourneyKeeper.Game"
+             BackgroundColor="#b7b7b7">
+
+    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <StackLayout Padding="20,20,20,20" Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <Label Text="Opponent"/>
+            <Label Text="{Binding Opponent}" FontAttributes="Bold"/>
+
+            <Label Text="Table"/>
+            <Label Text="{Binding Table}" FontAttributes="Bold"/>
+
+            <Label Text="My Points"/>
+            <Entry Keyboard="Numeric" Text="{Binding MyScore}"></Entry>
+
+            <Label Text="My Secondary Points" IsVisible="{Binding UseSecondaryPoints}"/>
+            <Entry Keyboard="Numeric" Text="{Binding MySecondaryScore}" IsVisible="{Binding UseSecondaryPoints}"></Entry>
+
+            <Label Text="Opponent Points"/>
+            <Entry Keyboard="Numeric" Text="{Binding OpponentScore}"></Entry>
+
+            <Label Text="Opponent Secondary Points" IsVisible="{Binding UseSecondaryPoints}"/>
+            <Entry Keyboard="Numeric" Text="{Binding OpponentSecondaryScore}" IsVisible="{Binding UseSecondaryPoints}"></Entry>
+
+            <Label Text="{Binding Status}" TextColor="Red" IsVisible="{Binding ShowStatus}"/>
+
+            <Button Text="Update" Command="{Binding UpdateCommand}"></Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

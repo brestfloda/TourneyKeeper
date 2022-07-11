@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TourneyKeeper"
+             xmlns:s="clr-namespace:System;assembly=mscorlib"
+             x:Class="TourneyKeeper.OpponentPicker"
+             BackgroundColor="#b7b7b7">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Logout" Order="Primary" Text="Logout" Priority="0" Command="{Binding LogoutCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout>
+        <RelativeLayout>
+            <StackLayout VerticalOptions="Start"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}">
+                <StackLayout x:Name="TeamOpponentPicker" Orientation="Vertical">
+                    <Label Text="Select your opponent and table number"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Picker x:Name="MyOpponentPicker" Title="My opponent" ItemsSource="{Binding Opponents}" SelectedItem="{Binding SelectedOpponent}" ItemDisplayBinding="{Binding PlayerName}">
+                            <Picker.Items>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Picker x:Name="TablePicker" Title="Table number" ItemsSource="{Binding Tables}" SelectedItem="{Binding SelectedTable}">
+                            <Picker.Items>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    <Button Text="Ok" Command="{Binding SelectOpponentCommand}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="End"
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.90}"
+                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}">
+                <Button Text="Update" Command="{Binding UpdateCommand}">
+                    <Button.CommandParameter>
+                        <s:Boolean>True</s:Boolean>
+                    </Button.CommandParameter>
+                </Button>
+            </StackLayout>
+        </RelativeLayout>
+        <ContentView x:Name="actIndBackground"
+                     BackgroundColor="#222222" Opacity="0.5"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     IsVisible="{Binding IsBusy}">
+        </ContentView>
+        <ActivityIndicator x:Name="actInd"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
+                           IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}" />
+    </AbsoluteLayout>
+</ContentPage>
